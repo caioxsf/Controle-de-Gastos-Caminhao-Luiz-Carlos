@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- biblioteca pro excel bb -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <!-- biblioteca pra transformar a data em padrao br -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <title>Planilha Caminhão</title>
+</head>
+<body background="assets/img/bg.png">
+
+    <div class="container">
+        <form id="formulario">
+            <label class="form-label" for="data">Data:</label><br>
+            <input type="date" id="data" name="data" class="form-input"  placeholder="Data"><br>
+    
+            <label class="form-label" for="origem">Origem:</label><br>
+            <input type="text" id="origem" name="origem" class="form-input" placeholder="Origem"><br>
+    
+            <label class="form-label" for="destino">Destino:</label><br>
+            <input type="text" id="destino" name="destino" class="form-input" placeholder="Destino"><br>
+    
+            <label class="form-label" for="frete">Frete:</label><br>
+            <input type="number" id="frete" name="frete" class="form-input" placeholder="Frete"><br>
+    
+            <label class="form-label" for="material">Material:</label><br>
+            <input type="text" id="material" name="material" class="form-input" placeholder="Material"><br>
+    
+            <label class="form-label" for="peso">Peso:</label><br>
+            <input type="number" id="peso" name="peso" class="form-input" placeholder="Peso"><br>
+    
+            <label class="form-label" for="motorista">Motorista:</label><br>
+            <input type="text" id="motorista" name="motorista" class="form-input" placeholder="Motorista"><br>
+    
+            <label class="form-label" for="transportadora">Transportadora:</label><br>
+            <input type="text" id="transportadora" name="transportadora" class="form-input" placeholder="Transportadora"><br>
+
+            <!-- <label class="form-label" for="adiatamento">Adiantamento</label><br>
+            <input type="number" id="adiantamento" name="adiantamento" class="form-input" placeholder="Adiantamento"><br><br> -->
+
+            <input type="button" value="Adicionar" onclick="addColuna()" class="btn">
+            <input type="reset" id="reset" class="btn" value="Resetar"><br>
+            <input type="button" onclick="clearTable()" class="btn" value="Limpar Tabela">
+            <input type="button" onclick="exportToExcel()" class="btn" value="Exportar para o Excel">
+        </form>
+    </div>
+    
+    <div class="container-botao">
+        
+    </div>
+    
+
+    <div class="container-tabela">
+        <table id="tabelaForm">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Origem</th>
+                    <th>Destino</th>
+                    <th>Frete</th>
+                    <th>Material</th>
+                    <th>Peso</th>
+                    <th>Motorista</th>
+                    <th>Valor Viagem</th>
+                    <th>Comissão</th>
+                    <th>Transportadora</th>
+                    <th>Apagar</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaPronta">
+                <!-- oreia vagabundo a tabela vai ficar bem aqui com o javascript -->
+            </tbody>
+        </table>
+    </div>
+    
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
